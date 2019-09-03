@@ -182,8 +182,6 @@ namespace VulkanMemoryAllocator
 			public IntPtr pUserData;
 		}
 
-		#endregion
-
 		/* all ulongs here refer to VkDeviceSize */
 		public struct VmaStatInfo
 		{
@@ -251,6 +249,8 @@ namespace VulkanMemoryAllocator
 			uint allocationsMoved;
 			uint deviceMemoryBlocksFreed;
 		}
+
+		#endregion
 
 		#region Public API
 
