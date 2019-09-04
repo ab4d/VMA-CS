@@ -261,53 +261,53 @@ namespace VulkanMemoryAllocator
 		/* pCreateInfo is a const VmaAlloactorCreateInfo*
 		 * pAllocator is a VmaAllocator*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCreateAllocator(
 			IntPtr pCreateInfo,
 			out IntPtr pAllocator
 		);
 		
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaDestroyAllocator(
 			IntPtr allocator
 		);
 
 		/* ppPhysicalDeviceProperties is a const VkPhysicalDeviceProperties** */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaGetPhysicalDeviceProperties(
 			IntPtr allocator,
 			IntPtr ppPhysicalDeviceProperties
 		);
 
 		/* ppPhysicalDeviceProperties is a const VkPhysicalDeviceMemoryProperties** */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaGetMemoryProperties(
 			IntPtr allocator,
 			IntPtr ppPhysicalDeviceMemoryProperties
 		);
 
 		/* pFlags is a VkMemoryPropertyFlags* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaGetMemoryTypeProperties(
 			IntPtr allocator,
 			uint memoryTypeIndex,
 			IntPtr pFlags
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaSetCurrentFrameIndex(
 			IntPtr allocator,
 			uint frameIndex
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaCalculateStats(
 			IntPtr allocator,
 			out VmaStats pStats
 		);
 
 		/* ppStatsString is a char** */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaBuildStatsString(
 			IntPtr allocator,
 			out IntPtr ppStatsString,
@@ -315,13 +315,13 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* pStatsString is a char* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaFreeStatsString(
 			IntPtr allocator,
 			IntPtr pStatsString
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaFindMemoryTypeIndex(
 			IntPtr allocator,
 			uint memoryTypeBits,
@@ -330,7 +330,7 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* pBufferCreateInfo is a const VkBufferCreateInfo* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaFindMemoryTypeIndexForBufferInfo(
 			IntPtr allocator,
 			IntPtr pBufferCreateInfo,
@@ -339,7 +339,7 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* pImageCreateInfo is a const VkImageCreateInfo* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaFindMemoryTypeIndexForImageInfo(
 			IntPtr allocator,
 			IntPtr pImageCreateInfo,
@@ -348,7 +348,7 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* pPool is a VmaPool* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCreatePool(
 			IntPtr allocator,
 			ref VmaPoolCreateInfo pCreateInfo,
@@ -356,14 +356,14 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* pool is a VmaPool */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaDestroyPool(
 			IntPtr allocator,
 			IntPtr pool
 		);
 
 		/* pool is a VmaPool */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaGetPoolStats(
 			IntPtr allocator,
 			IntPtr pool,
@@ -373,7 +373,7 @@ namespace VulkanMemoryAllocator
 		/* pool is a VmaPool
 		 * pLostAllocationCount is a size_t*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaMakePoolAllocationsLost(
 			IntPtr allocator,
 			IntPtr pool,
@@ -381,7 +381,7 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* pool is a VmaPool */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCheckPoolCorruption(
 			IntPtr allocator,
 			IntPtr pool
@@ -390,7 +390,7 @@ namespace VulkanMemoryAllocator
 		/* pVkMemoryRequirements is a const VkMemoryRequirements*
 		 * pAllocation is a VmaAllocation*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaAllocateMemory(
 			IntPtr allocator,
 			IntPtr pVkMemoryRequirements,
@@ -403,7 +403,7 @@ namespace VulkanMemoryAllocator
 		 * allocationCount is a size_t
 		 * pAllocations is a VmaAllocation*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaAllocateMemoryPages(
 			IntPtr allocator,
 			IntPtr pVkMemoryRequirements,
@@ -416,7 +416,7 @@ namespace VulkanMemoryAllocator
 		/* buffer is a VkBuffer
 		 * pAllocation is a VmaAllocation*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaAllocateMemoryForBuffer(
 			IntPtr allocator,
 			IntPtr buffer,
@@ -428,7 +428,7 @@ namespace VulkanMemoryAllocator
 		/* image is a VkImage
 		 * pAllocation is a VmaAllocation*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaAllocateMemoryForImage(
 			IntPtr allocator,
 			IntPtr image,
@@ -437,7 +437,7 @@ namespace VulkanMemoryAllocator
 			out VmaAllocationInfo pAllocationInfo
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaFreeMemory(
 			IntPtr allocator,
 			IntPtr allocation
@@ -446,7 +446,7 @@ namespace VulkanMemoryAllocator
 		/* allocationCount is a size_t
 		 * pAllocations is a VmaAllocation*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaFreeMemoryPages(
 			IntPtr allocator,
 			uint allocationCount,
@@ -454,14 +454,14 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* newSize is a VkDeviceSize */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaResizeAllocation(
 			IntPtr allocator,
 			IntPtr allocation,
 			ulong newSize
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaGetAllocationInfo(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -469,42 +469,42 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* returns VkBool32 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern uint vmaTouchAllocation(
 			IntPtr allocator,
 			IntPtr allocation
 		);
 
 		/* pUserData is a void* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaSetAllocationUserData(
 			IntPtr allocator,
 			IntPtr allocation,
 			IntPtr pUserData
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaCreateLostAllocation(
 			IntPtr allocator,
 			out IntPtr pAllocation
 		);
 		
 		/* ppData is a void** */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaMapMemory(
 			IntPtr allocator,
 			IntPtr allocation,
 			IntPtr[] ppData
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaUnmapMemory(
 			IntPtr allocator,
 			IntPtr allocation
 		);
 
 		/* offset and size refer to VkDeviceSize */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaFlushAllocation(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -513,7 +513,7 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* offset and size refer to VkDeviceSize */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaInvalidateAllocation(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -521,14 +521,14 @@ namespace VulkanMemoryAllocator
 			ulong size
 		);
 
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCheckCorruption(
 			IntPtr allocator,
 			uint memoryTypeBits
 		);
 
 		/* pContext is a VmaDefragmentationContext* */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaDefragmentationBegin(
 			IntPtr allocator,
 			ref VmaDefragmentationInfo2 pInfo,
@@ -537,14 +537,14 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* context is a VmaDefragmentationContext */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaDefragmentationEnd(
 			IntPtr allocator,
 			IntPtr context
 		);
 
 		/* buffer is a VkBuffer */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaBindBufferMemory(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -555,7 +555,7 @@ namespace VulkanMemoryAllocator
 		 * buffer is a VkBuffer
 		 * pNext is a const void*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaBindBufferMemory2(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -565,7 +565,7 @@ namespace VulkanMemoryAllocator
 		);
 
 		/* image is a VkImage */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaBindImageMemory(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -576,7 +576,7 @@ namespace VulkanMemoryAllocator
 		 * image is a VkImage
 		 * pNext is a const void*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaBindImageMemory2(
 			IntPtr allocator,
 			IntPtr allocation,
@@ -588,19 +588,20 @@ namespace VulkanMemoryAllocator
 		/* pBufferCreateInfo is a const VkBufferCreateInfo*
 		 * pBuffer is a VkBuffer*
 		 * pAllocation is a VmaAllocation*
+		 * pAllocationInfo is a VmaAllocationInfo*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCreateBuffer(
 			IntPtr allocator,
 			IntPtr pBufferCreateInfo,
 			ref VmaAllocationCreateInfo pAllocationCreateInfo,
-			out IntPtr pBuffer,
-			out IntPtr pAllocation,
-			out VmaAllocationInfo pAllocationInfo
+			out ulong pBuffer,
+			out ulong pAllocation,
+			IntPtr pAllocationInfo
 		);
 
 		/* buffer is a VkBuffer */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaDestroyBuffer(
 			IntPtr allocator,
 			IntPtr buffer,
@@ -610,19 +611,20 @@ namespace VulkanMemoryAllocator
 		/* pImageCreateInfo is a const VkImageCreateInfo*
 		 * pImage is a VkImage*
 		 * pAllocation is a VmaAllocation*
+		 * pAllocationInfo is a VmaAllocationInfo*
 		 */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCreateImage(
 			IntPtr allocator,
 			IntPtr pImageCreateInfo,
 			ref VmaAllocationCreateInfo pAllocationCreateInfo,
-			out IntPtr pImage,
-			out IntPtr pAllocation,
-			out VmaAllocationInfo pAllocationInfo
+			out ulong pImage,
+			out ulong pAllocation,
+			IntPtr pAllocationInfo
 		);
 
 		/* image is a VkImage */
-		[DllImport(libraryName)]
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaDestroyImage(
 			IntPtr allocator,
 			IntPtr image,
