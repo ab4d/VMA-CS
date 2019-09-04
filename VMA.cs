@@ -596,7 +596,7 @@ namespace VulkanMemoryAllocator
 			IntPtr pBufferCreateInfo,
 			ref VmaAllocationCreateInfo pAllocationCreateInfo,
 			out ulong pBuffer,
-			out ulong pAllocation,
+			out IntPtr pAllocation,
 			IntPtr pAllocationInfo
 		);
 
@@ -604,7 +604,7 @@ namespace VulkanMemoryAllocator
 		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaDestroyBuffer(
 			IntPtr allocator,
-			IntPtr buffer,
+			ulong buffer,
 			IntPtr allocation
 		);
 
@@ -619,7 +619,7 @@ namespace VulkanMemoryAllocator
 			IntPtr pImageCreateInfo,
 			ref VmaAllocationCreateInfo pAllocationCreateInfo,
 			out ulong pImage,
-			out ulong pAllocation,
+			out IntPtr pAllocation,
 			IntPtr pAllocationInfo
 		);
 
@@ -627,7 +627,7 @@ namespace VulkanMemoryAllocator
 		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern void vmaDestroyImage(
 			IntPtr allocator,
-			IntPtr image,
+			ulong image,
 			IntPtr allocation
 		);
 
