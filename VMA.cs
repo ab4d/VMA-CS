@@ -263,7 +263,7 @@ namespace VulkanMemoryAllocator
 		 */
 		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaCreateAllocator(
-			IntPtr pCreateInfo,
+			ref VmaAllocatorCreateInfo pCreateInfo,
 			out IntPtr pAllocator
 		);
 		
