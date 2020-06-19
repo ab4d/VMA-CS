@@ -11,7 +11,7 @@ namespace VulkanMemoryAllocator
 
 		#region Constants
 
-        public static readonly Version VmaVersion = new Version(2, 3, 0); // (2019-12-04)
+		public static readonly Version VmaVersion = new Version(2, 3, 0); // (2019-12-04)
 
 		public const int VK_MAX_MEMORY_TYPES = 32;
 		public const int VK_MAX_MEMORY_HEAPS = 16;
@@ -25,7 +25,7 @@ namespace VulkanMemoryAllocator
 			VMA_ALLOCATOR_CREATE_EXTERNALLY_SYNCHRONIZED_BIT = 0x00000001,
 			VMA_ALLOCATOR_CREATE_KHR_DEDICATED_ALLOCATION_BIT = 0x00000002,
 			VMA_ALLOCATOR_CREATE_KHR_BIND_MEMORY2_BIT = 0x00000004,
-            VMA_ALLOCATOR_CREATE_EXT_MEMORY_BUDGET_BIT = 0x00000008,
+			VMA_ALLOCATOR_CREATE_EXT_MEMORY_BUDGET_BIT = 0x00000008,
 			VMA_ALLOCATOR_CREATE_FLAG_BITS_MAX_ENUM = 0x7FFFFFFF
 		}
 
@@ -42,7 +42,7 @@ namespace VulkanMemoryAllocator
 			VMA_MEMORY_USAGE_CPU_ONLY = 2,
 			VMA_MEMORY_USAGE_CPU_TO_GPU = 3,
 			VMA_MEMORY_USAGE_GPU_TO_CPU = 4,
-            VMA_MEMORY_USAGE_GPU_LAZILY_ALLOCATED = 6,
+			VMA_MEMORY_USAGE_GPU_LAZILY_ALLOCATED = 6,
 			VMA_MEMORY_USAGE_MAX_ENUM = 0x7FFFFFFF
 		}
 
@@ -56,7 +56,7 @@ namespace VulkanMemoryAllocator
 			VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT = 0x00000020,
 			VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT = 0x00000040,
 			VMA_ALLOCATION_CREATE_DONT_BIND_BIT = 0x00000080,
-            VMA_ALLOCATION_CREATE_WITHIN_BUDGET_BIT = 0x00000100,
+			VMA_ALLOCATION_CREATE_WITHIN_BUDGET_BIT = 0x00000100,
 			VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT  = 0x00010000,
 			VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT = 0x00020000,
 			VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT = 0x00040000,
@@ -120,11 +120,11 @@ namespace VulkanMemoryAllocator
 			public IntPtr vkCmdCopyBuffer;
 
 #if VMA_VULKAN_VERSION_1001000
-            public IntPtr vkGetBufferMemoryRequirements2KHR;
+			public IntPtr vkGetBufferMemoryRequirements2KHR;
 			public IntPtr vkGetImageMemoryRequirements2KHR;
-            public IntPtr vkBindBufferMemory2KHR;
-            public IntPtr vkBindImageMemory2KHR;
-            public IntPtr vkGetPhysicalDeviceMemoryProperties2KHR;
+			public IntPtr vkBindBufferMemory2KHR;
+			public IntPtr vkBindImageMemory2KHR;
+			public IntPtr vkGetPhysicalDeviceMemoryProperties2KHR;
 #endif
 		}
 
@@ -157,7 +157,7 @@ namespace VulkanMemoryAllocator
 			public IntPtr pVulkanFunctions;
 			public IntPtr pRecordSettings;
 			public IntPtr instance;
-            public uint vulkanApiVersion;
+			public uint vulkanApiVersion;
 		}
 
 		/* blockSize is a VkDeviceSize
@@ -186,13 +186,13 @@ namespace VulkanMemoryAllocator
 			public uint blockCount;
 		}
 
-        /* all ulongs here refer to VkDeviceSize */
+		/* all ulongs here refer to VkDeviceSize */
 		public struct VmaBudget
-        {
-            public ulong blockBytes;
-            public ulong allocationBytes;
-            public ulong usage;
-            public ulong budget;
+		{
+			public ulong blockBytes;
+			public ulong allocationBytes;
+			public ulong usage;
+			public ulong budget;
 		}
 
 		/* deviceMemory is a VkDeviceMemory
@@ -333,10 +333,10 @@ namespace VulkanMemoryAllocator
 			out VmaStats pStats
 		);
 
-        [DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void vmaGetBudget(
-            IntPtr allocator,
-            out VmaBudget pBudget
+		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern void vmaGetBudget(
+			IntPtr allocator,
+			out VmaBudget pBudget
 		);
 
 		/* ppStatsString is a char** */
@@ -420,20 +420,20 @@ namespace VulkanMemoryAllocator
 			IntPtr pool
 		);
         
-        /* pool is a VmaPool */
+		/* pool is a VmaPool */
 		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaGetPoolName(
 			IntPtr allocator,
 			IntPtr pool,
-            out IntPtr ppName
+			out IntPtr ppName
 		);
         
-        /* pool is a VmaPool */
+		/* pool is a VmaPool */
 		[DllImport(libraryName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int vmaSetPoolName(
 			IntPtr allocator,
 			IntPtr pool,
-            IntPtr pName
+			IntPtr pName
 		);
 
 		/* pVkMemoryRequirements is a const VkMemoryRequirements*
