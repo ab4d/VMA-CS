@@ -7,7 +7,7 @@ namespace VulkanMemoryAllocator
 {
 	public static class VMA
 	{
-		private const string libraryName = "vma.dll";
+		private const string libraryName = "vk_mem_alloc.dll";
 
 		#region Constants
 
