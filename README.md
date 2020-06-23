@@ -4,12 +4,12 @@ C# wrapper for the Vulkan Memory Allocator (VMA) library
 
 The Vulkan Memory Allocator (VMA) library provides a simple and easy to integrate API to help you allocate memory for Vulkan buffer and image storage.
 
-This project contains a VMA.cs file that can be included into your project and provides a .Net wrapper for the native VMA library.
+This project contains a VMA.cs file that can be included in your project and provides a .Net wrapper for the native VMA library.
 
 
 ## Native VMA library
 
-VMA library is originally defiend in a single C++ header file (vk_mem_alloc.h). To use it in a .Net project, the library needs to be compiled into a native dll. 
+VMA library is originally defined in a single C++ header file (vk_mem_alloc.h). To use it in a .Net project, the library needs to be compiled into a native dll. 
 
 This project comes with a precompiled library for win-x86 and win-x64 (**see compile-vma folder**).
 There are also instructions and windows bat files to compile newer versions of the library or versions with different #define options.
